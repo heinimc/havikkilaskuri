@@ -1,0 +1,34 @@
+.kasvikset {
+    border-bottom: 1px solid red;
+    font-weight: bold;
+    font-size: 120%;
+    display: flex;
+  }
+  
+  .kasvikset__rivi {
+    display: flex;
+    justify-content: space-between;
+    font-size: 85%;
+    font-weight: lighter;
+  }
+
+  .kasvikset > div {
+      flex: 1 1 auto;
+      padding: 1em;
+  }
+
+  .kasvikset__linkki {
+    max-width: 1em;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .kasvikset:hover .kasvikset__linkki {
+      display: flex;
+  }
+
+  .kasvikset__linkki a {
+      color: rgba#000;
+  }

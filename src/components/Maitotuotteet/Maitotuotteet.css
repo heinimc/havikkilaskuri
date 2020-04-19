@@ -1,0 +1,13 @@
+.maitotuotteet {
+    padding: 1em;
+    border-bottom: 1px solid red;
+    font-weight: bold;
+    font-size: 120%;
+  }
+  
+  .maitotuotteet__rivi {
+    display: flex;
+    justify-content: space-between;
+    font-size: 85%;
+    font-weight: lighter;
+  }
