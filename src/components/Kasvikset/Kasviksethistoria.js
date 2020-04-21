@@ -4,15 +4,16 @@ import Kasviksettest from '../Kasvikset/Kasviksettest';
 import Content from '../Content/Content';
 
 function Kasviksethistoria(props) {
-
+  
 let rows = props.data.map(lisäys => {
   
     return (
-      <Kasviksettest data={lisäys} key={lisäys.id} onDeleteItem={props.onDeleteItem} />
+      <Kasviksettest data={lisäys} 
+                     key={lisäys.id} 
+                     onDeleteItem={props.onDeleteItem} />
     );
   }
   
-
   );
     return(
       <Content>
@@ -21,5 +22,6 @@ let rows = props.data.map(lisäys => {
       </Content>
     );
   }
+  
 
   export default Kasviksethistoria;

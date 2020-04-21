@@ -1,4 +1,4 @@
-.veget {
+.protskut {
   padding: 1em;
   border-bottom: 1px solid red;
   font-weight: bold;
@@ -6,11 +6,10 @@
 }
 
 
-.veget__row {
+.protskut__row {
   
   justify-content: space-between;
   font-size: 85%;
   font-weight: lighter;
 }
-
 

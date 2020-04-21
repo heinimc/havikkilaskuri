@@ -6,13 +6,14 @@ import './Kasviksettest.css';
 function Kasviksettest (props) {
    
 
-  let päivä = moment(props.data.päivä);
+  let paiva = moment(props.data.paiva);
+ 
 
     return(
       <div className="kasvikset">
         <div className="kasvikset__ryhma">
           <div className="kasvikset__rivi">
-            <div className="kasvikset__päivä">{päivä.format("D.M.Y")}</div>
+            <div className="kasvikset__paiva">{paiva.format("D.M.Y")}</div>
           </div>
     
           <div className="kasvikset__rivi">

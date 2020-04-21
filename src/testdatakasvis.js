@@ -1,24 +1,41 @@
-const testdatakasvis = [
+const testdatakasvis = 
+   [
     { id: "1",
     raakaaine: 'kasvikset',
-    päivä: '2020-05-11', 
+    paiva: '2020-05-11', 
     grammat: 100,
     eurot: 2.5},
   { id: "2",
     raakaaine: 'kasvikset',
-    päivä: '2020-05-10', 
+    paiva: '2020-05-10', 
     grammat: 50,
     eurot: 5.00},
   { id: "3",
     raakaaine: 'kasvikset',
-    päivä: '2020-05-09', 
+    paiva: '2020-05-09', 
     grammat: 150,
     eurot: 0.85},
   { id: "4",
     raakaaine: 'kasvikset',
-    päivä: '2020-05-08', 
+    paiva: '2020-05-08', 
     grammat: 200,
     eurot: 0.80},
-];
+    { id: "5",
+    raakaaine: 'maitotuotteet',
+    paiva: '2020-05-08', 
+    grammat: 200,
+    eurot: 0.80},
+    { id: "6",
+    raakaaine: 'proteiinit',
+    paiva: '2020-05-08', 
+    grammat: 200,
+    eurot: 0.80},
+    { id: "5",
+    raakaaine: 'viljat',
+    paiva: '2020-05-08', 
+    grammat: 200,
+    eurot: 0.80}
+   //]
+  ];
 
 export default testdatakasvis;
