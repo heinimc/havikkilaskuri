@@ -1,12 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import { Link } from 'react-router-dom';
-import { FloatingButton } from '../buttons';
 import Content from '../Content/Content';
-
-import Lomake from '../Lomake/Lomake';
-import Kasviksettest from '../Kasvikset/Kasviksettest';
-import Kasviksethistoria from '../Kasvikset/Kasviksethistoria';
 
 import './Kasvikset.css';
 
@@ -33,8 +27,6 @@ function Kasvikset (props) {
       </div>
 
       
-
-      <Link to="/lisää"><FloatingButton secondary>+</FloatingButton></Link>
 
       </Content>
       

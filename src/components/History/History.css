@@ -1,0 +1,29 @@
+.history {
+    border-bottom: 1px solid red;
+    font-weight: bold;
+    font-size: 120%;
+    display: flex;
+  }
+  
+  .history__row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 85%;
+    font-weight: lighter;
+  }
+
+  .history__kuukausi {
+    font-weight: bold;
+}
+
+.history__kasvikset, .history__maitotuotteet,
+.history__proteiinit, .history__viljat {
+    font-size: 60%;
+}
+
+  .history > div {
+      flex: 1 1 auto;
+      padding: 1em;
+  }
+
+

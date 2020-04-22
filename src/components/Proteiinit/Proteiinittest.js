@@ -6,13 +6,13 @@ import './Proteiinittest.css';
 function Proteiinittest (props) {
    
 
-  let paiva = moment(props.data.paiva);
+  let päivä = moment(props.data.päivä);
 
     return(
       <div className="proteiinit">
         <div className="proteiinit__ryhma">
           <div className="proteiinit__rivi">
-            <div className="proteiinit__paiva">{paiva.format("D.M.Y")}</div>
+            <div className="proteiinit__paiva">{päivä.format("D.M.Y")}</div>
           </div>
     
           <div className="proteiinit__rivi">

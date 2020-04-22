@@ -4,13 +4,16 @@ import Kasviksettest from '../Kasvikset/Kasviksettest';
 import Content from '../Content/Content';
 
 function Kasviksethistoria(props) {
+
+let itemData= props.data.filter(item => item.raakaaine === "kasvikset");
   
-let rows = props.data.map(lisäys => {
+let rows = itemData.map(lisäys => {
   
     return (
-      <Kasviksettest data={lisäys} 
+      <Kasviksettest data={lisäys}
                      key={lisäys.id} 
-                     onDeleteItem={props.onDeleteItem} />
+                     onDeleteItem={props.onDeleteItem}
+                     />
     );
   }
   

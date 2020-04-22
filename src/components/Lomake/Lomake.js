@@ -64,8 +64,11 @@ class Lomake extends React.Component {
           <div className="itemform__row">
             <div>
             <label htmlFor="name">Raaka-aine</label>
-            <select name="kasvis" value={this.state.data.kasvis} onChange={this.handleInputChange}>
+            <select name="raakaaine" value={this.state.data.raakaaine} onChange={this.handleInputChange}>
               <option value="kasvikset">Kasvikset</option>
+              <option value="maitotuotteet">Maitotuotteet</option>
+              <option value="proteiinit">Proteiinit</option>
+              <option value="viljat">Viljat</option>
             </select>
           </div>
           </div>

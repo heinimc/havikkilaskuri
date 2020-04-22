@@ -1,14 +1,8 @@
 import React from 'react';
 
 import moment from 'moment';
-import { Link } from 'react-router-dom';
-import { FloatingButton } from '../buttons';
 
 import Content from '../Content/Content';
-import Kasviksethistoria from '../Kasvikset/Kasviksethistoria';
-import Lomake from '../Lomake/Lomake';
-import Kasviksettest from '../Kasvikset/Kasviksettest';
-import Lisää from '../Lisää/Lisää';
 
 import './Proteiinit.css';
 
@@ -16,6 +10,11 @@ import './Proteiinit.css';
 function Proteiinit (props) {
 
   let kuukausi = moment(props.kuukausi);
+
+  const grammat = props.data.filter(item => item.raakaaine === "proteiinit").reduce((total, item) => total + item.grammat, 0);
+  const eurot = props.data.filter(item => item.raakaaine === "proteiinit").reduce((total, item) => total + item.eurot, 0);
+
+  
 
     return(
       <Content>
@@ -25,14 +24,13 @@ function Proteiinit (props) {
       </div>
   
       <div className="protskut__row">
-        <div className="protskut__grammat">g</div>
-        <div className="protskut__eurot">€</div>
+        <div className="protskut__grammat">{grammat ? grammat + " g" : " g"} </div>
+        <div className="protskut__eurot">{eurot ? eurot + " €" : " €"} </div>
       </div>
       </div>
       
 
-<Link to="/lisää"><FloatingButton secondary>+</FloatingButton></Link>
-</Content>
+    </Content>
 
     );
   

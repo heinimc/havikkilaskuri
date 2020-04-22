@@ -1,4 +1,4 @@
-.wheat {
+.veget {
   padding: 1em;
   border-bottom: 1px solid red;
   font-weight: bold;
@@ -6,9 +6,11 @@
 }
 
 
-.wheat__row {
+.veget__row {
   
   justify-content: space-between;
   font-size: 85%;
   font-weight: lighter;
 }
+
+
