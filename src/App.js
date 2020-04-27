@@ -70,8 +70,8 @@ class App extends Component {
                                                                 onDeleteItem={this.handleDeleteItem}/>}/>
 
           
-              <Route path="/history" component={History}/>
-              <Route path="/chart" component={Chart}/>
+              <Route path="/history" render ={() => <History data={this.state.data}/>}/>
+              <Route path="/chart" render={() => <Chart data = {this.state.data}/>}/>
                 <Route path="/lisää" render= {() => <Lisää onFormSubmit={this.handleFormSubmit}/>} />
               
       <Menu />
