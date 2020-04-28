@@ -2,6 +2,7 @@
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     position: relative;
+    background-color: lightpink;
   
   }
   

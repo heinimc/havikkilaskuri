@@ -25,21 +25,21 @@
 }
 
 .button--primary {
-    background-color: #0285ee;
+    background-color: deeppink;
     color: #fff;
 }
 
 .button--primary:active {
-    background-color: #65b4ff;
+    background-color:  deeppink;
 }
 
 .button--secondary {
-    background-color: #ee6c02;
+    background-color: black;
     color: #fff;    
 }
 
 .button--secondary:active {
-    background-color: #ff9b3e;
+    background-color: black;
 }
 
 .button:disabled {
