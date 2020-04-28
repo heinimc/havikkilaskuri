@@ -11,3 +11,7 @@
     font-size: 85%;
     font-weight: lighter;
   }
+
+  .maidot__grammat, .maidot__eurot {
+    font-weight: bold;
+  }

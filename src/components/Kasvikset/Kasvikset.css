@@ -7,10 +7,13 @@
 
 
 .veget__row {
-  
   justify-content: space-between;
   font-size: 85%;
   font-weight: lighter;
+}
+
+.veget__grammat, .veget__eurot {
+  font-weight: bold;
 }
 
 
