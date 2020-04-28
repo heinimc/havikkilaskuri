@@ -1,33 +1,33 @@
 import React from 'react';
+import Content from '../Content/Content';
+import moment from 'moment';
 import { Line } from 'react-chartjs-2';
 import { Doughnut } from 'react-chartjs-2';
-import Content from '../Content/Content';
+import stringHash from 'string-hash';
 import './Chart.css';
 
 function Chart(props) {
 
-  const reducer = (groupedData, currentItem) => {
-    const index = groupedData.findIndex(item => item.raakaaine === currentItem.raakaaine);
+const reducer = (kkHävikki, nykyHävikki) => {
+  const index = kkHävikki.findIndex(item => item.päivä ===  moment(nykyHävikki.päivä).format('YYYY-M'));
+
     if (index >=0) {
-      groupedData[index].eurot = groupedData[index].eurot + currentItem.eurot;
+      kkHävikki[index].eurot = kkHävikki[index].eurot + nykyHävikki.eurot;
     } else {
-      groupedData.push({raakaaine:currentItem.raakaaine, eurot:currentItem.eurot});
+      kkHävikki.push({päivä: moment(nykyHävikki.päivä).format('YYYY-M'), eurot:nykyHävikki.eurot});
     }
-    return groupedData;
+    return kkHävikki;
   }
 
-let groupedData=props.data.reduce(reducer, []);
+ 
+ let kkHävikki = props.data.reduce(reducer, []);
 
 
 let doughnutData = {
-  labels: groupedData.map(item => item.raakaaine),
+  labels: kkHävikki.map(item => item.päivä),
   datasets:[{
-    data:groupedData.map(item => item.eurot),
-    backgroundColor: [
-    '#FF6384',
-    '#36A2EB',
-    '#FFCE56',
-    '#75f077'],
+    data:kkHävikki.map(item => item.eurot),
+    backgroundColor:kkHävikki.map(item => "hsl(" + (stringHash(item.päivä) % 360) + ", 80%, 70%)"),
   }
 ]
 }
@@ -68,7 +68,7 @@ let doughnutData = {
     return(
       <Content>
         <div className="chart">
-        <h3>Raaka-ainekohtaiset hävikit (€)</h3>
+        <h3>Kuukausikohtaiset hävikit (€)</h3>
           <div className="chart__doughnutgraph">
             <Doughnut data={doughnutData} />
           </div>
