@@ -34,7 +34,7 @@ function History (props){
  let rows = kkHävikki.map(item =>
   <div className="edeltäväkuukausi__row">
     <div>{item.päivä}</div>
-    <div>{item.eurot} €</div>
+    <div>{item.eurot.toFixed(2)} €</div>
     <div>{item.grammat} g</div>
   </div>
  )

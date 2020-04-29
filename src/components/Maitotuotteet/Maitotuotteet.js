@@ -26,10 +26,10 @@ function Maitotuotteet (props) {
   
         <div className="maidot__row">
           <div className="maidot__grammat">{grammat ? grammat + " g" : " g"} </div>
-          <div className="maidot__eurot">{eurot ? eurot + " €" : " €"} </div>
+          <div className="maidot__eurot">{eurot.toFixed(2) ? eurot.toFixed(2) + " €" : " €"} </div>
         
         <div className="maidot__row"></div>
-          <Link to="/maitotuotteet">Maitotuotteet</Link>
+          <Link to="/maitotuotteet">Edelliset hävikit</Link>
         </div>
       </div>
 

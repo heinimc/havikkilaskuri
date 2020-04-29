@@ -23,10 +23,10 @@ function Viljat (props) {
     
             <div className="wheat__row">
               <div className="wheat__grammat">{grammat ? grammat + " g" : " g"} </div>
-              <div className="wheat__eurot">{eurot ? eurot + " €" : " €"} </div>
+              <div className="wheat__eurot">{eurot.toFixed(2) ? eurot.toFixed(2) + " €" : " €"} </div>
             </div>
             <div className="wheat__row">
-              <Link to="/viljat">Viljat</Link>
+              <Link to="/viljat">Edelliset hävikit</Link>
             </div>
           </div>
       </Content>

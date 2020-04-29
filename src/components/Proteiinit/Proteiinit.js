@@ -25,10 +25,10 @@ function Proteiinit (props) {
   
         <div className="protskut__row">
           <div className="protskut__grammat">{grammat ? grammat + " g" : " g"} </div>
-          <div className="protskut__eurot">{eurot ? eurot + " €" : " €"} </div>
+          <div className="protskut__eurot">{eurot.toFixed(2) ? eurot.toFixed(2) + " €" : " €"} </div>
         </div>
         <div className="protskut__row">
-          <Link to="/proteiinit">Proteiinit</Link>
+          <Link to="/proteiinit">Edelliset hävikit</Link>
         </div>
       </div>
       
