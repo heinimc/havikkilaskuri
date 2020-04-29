@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import testdata from './testdata';
+import firebase from './firebase';
 
 import Header from './components/Header/Header';
 import Raakaaineet from './components/Raakaaineet/Raakaaineet';
@@ -20,40 +20,39 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data:testdata
+      data:[],
     }
+    this.dbRef = firebase.firestore(); //viittaus tietokantaan
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleDeleteItem = this.handleDeleteItem.bind(this);
   }
 
-  //*Lomakkeen käsittelyfunktio. Tehdään olemassa olevasta datasta kopio, tallennetaan uusi lisäys (newdata) Storeddataan. 
+  //Luodaan yhteys tietokantaan, tietojen tallennus ja lataaminen Snapshotin avulla
+  //firebase tietokannasta
+  //orderBylla tehty järjestys päivän mukaan viimeisin lisäys ylimpänä
+
+  componentDidMount() {
+    this.refData = this.dbRef.collection('data'); //tietojen tallennus
+    this.refData.orderBy("päivä", "desc").onSnapshot((docs) => { 
+      let data = [];
+      docs.forEach((doc) => {
+        let docdata = doc.data();
+        data.push(docdata);
+      });
+      this.setState({
+        data:data
+      });
+    });
+  }
+
+ //lisää datan tietokantaan (firebaseen)
   handleFormSubmit(newdata) {
-    let storeddata = this.state.data.slice();
-    storeddata.push(newdata);
-
-    //* Järjestää taulukon niin, että viimeisin lisäys on listassa ylimpänä //*
-    storeddata.sort((a,b) => {
-      const aDate = new Date(a.päivä);
-      const bDate = new Date(b.päivä);
-      return bDate.getTime() - aDate.getTime();
-    });
-    this.setState({
-      data:storeddata
-
-    });
+    this.refData.doc(newdata.id).set(newdata);
   }
   
-  //State muuttujasta filteröidään id:llä se kyseinen tietue, joka halutaan poistaa ja tallenetaan muutos State-muuttujaan //
   handleDeleteItem (id) {
-    let storeddata = this.state.data.slice();
-    storeddata = storeddata.filter(item => item.id !== id);
-    this.setState({
-      data:storeddata
-
-    });
+    this.refData.doc(id).delete().then().catch(error => {console.error("Virhe tietoa positettaessa: ",error)});
   }
-
- 
 
   render() {
   return (
