@@ -20,7 +20,6 @@ const testdata =
     päivä: '2020-05-08', 
     grammat: 200,
     eurot: 0.80}
-   //]
   ];
 
 export default testdata;

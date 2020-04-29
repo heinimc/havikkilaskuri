@@ -6,6 +6,15 @@ import './History.css';
 
 function History (props){
 
+  //Halutaan tallentaa kaikki tehdyt hävikinlisäykset kuukausittain ja näin nähdä paljonko hävikkiä kertyy kuukausitasolla
+
+  // tehdään reducer-funktio, joka saa parametrikseen kkHävikki ja nykyHävikki. 
+  //Indexillä käydään läpi päivät ja muutetaan tulos vuosi-kuukausi-muotoon.
+  //Jos index on suurempi tai yhtäsuuri kuin 0 eli dataa löytyy, tallennetaan taulukkoon kkHävikki + nykyHävikki grammoista ja euroista, 
+  //jos dataa ei ole, tallennetaan sillä hetkellä käsiteltävä nykyhävikki kkHävikkiin.
+  // ja palautetaan kkHävikki.
+  //samaa käytetään myös Chart-komponentissa kun tulostetaan donitsikaavio
+
   const reducer = (kkHävikki, nykyHävikki) => {
   const index = kkHävikki.findIndex(item => item.päivä ===  moment(nykyHävikki.päivä).format('YYYY-M'));
 
@@ -18,6 +27,8 @@ function History (props){
     return kkHävikki;
   }
 
+  //kkHävikki saa reducen kanssa tyhjän taulukon, joka mäpätään uudeksi taulukoksi, joka sisältää päivät(jotka on koostettu ylempänä kuukaudeksi),
+  //kyseisen kuukauden aikana hävikkiin mennet eurot ja grammat
  
  let kkHävikki = props.data.reduce(reducer, []);
  let rows = kkHävikki.map(item =>

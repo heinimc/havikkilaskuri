@@ -5,6 +5,9 @@ import Content from '../Content/Content';
 
 
 function Viljathistoria(props) {
+  //filteröidään datasta vain ne lisäykset jotka koskevat viljoja ja tehdään niistä oma taulukko, jonne menevät uudet viljahävikkilisäykset,
+  //jokainen lisäys saa oman id:n,
+  //jokainen lisäys on mahdollista poistaa
   
   let itemData= props.data.filter(item => item.raakaaine === "viljat");
   
@@ -21,7 +24,7 @@ function Viljathistoria(props) {
   );
     return(
       <Content>
-        <h2>Viljat historia</h2>
+        <h3>Hävikinlisäykset/Viljat</h3>
         {rows}
       </Content>
     );

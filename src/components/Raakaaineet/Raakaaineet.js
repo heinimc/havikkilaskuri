@@ -14,23 +14,15 @@ function Raakaaineet(props) {
     return(
       <Content>
           <div className="raakaaineet">
-          <Link to="/kasvikset"><div className="kasvikset__nappi">Kasvikset</div></Link>
-        <Kasvikset data={props.data} />
-        <Link to="/maitotuotteet"><div className="maitotuotteet__nappi">Maitotuotteet</div></Link>
-        <Maitotuotteet data={props.data} />
-        <Link to="/proteiinit"><div className="proteiinit__nappi">Proteiinit</div></Link>
-        <Proteiinit data={props.data} />
-        <Link to="/viljat"><div className="viljat__nappi">Viljat</div></Link>
-        <Viljat data={props.data} />
-        </div>
+            <Kasvikset data={props.data} />
+            <Maitotuotteet data={props.data} />
+            <Proteiinit data={props.data} />
+            <Viljat data={props.data} />
+          </div>
 
         <Link to="/lisää"><FloatingButton secondary>+</FloatingButton></Link>
-
-
       </Content>
       
-  
-  
     );
   }
 

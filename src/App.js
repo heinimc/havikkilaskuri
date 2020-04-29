@@ -26,9 +26,12 @@ class App extends Component {
     this.handleDeleteItem = this.handleDeleteItem.bind(this);
   }
 
+  //*Lomakkeen käsittelyfunktio. Tehdään olemassa olevasta datasta kopio, tallennetaan uusi lisäys (newdata) Storeddataan. 
   handleFormSubmit(newdata) {
     let storeddata = this.state.data.slice();
     storeddata.push(newdata);
+
+    //* Järjestää taulukon niin, että viimeisin lisäys on listassa ylimpänä //*
     storeddata.sort((a,b) => {
       const aDate = new Date(a.päivä);
       const bDate = new Date(b.päivä);
@@ -39,7 +42,8 @@ class App extends Component {
 
     });
   }
-
+  
+  //State muuttujasta filteröidään id:llä se kyseinen tietue, joka halutaan poistaa ja tallenetaan muutos State-muuttujaan //
   handleDeleteItem (id) {
     let storeddata = this.state.data.slice();
     storeddata = storeddata.filter(item => item.id !== id);

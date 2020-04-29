@@ -1,9 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import Button from '../buttons';
-import { v4 as uuidv4 } from 'uuid';
-
-
+import { v4 as uuidv4 } from 'uuid'; 
 import './Lomake.css';
 
 class Lomake extends React.Component {
@@ -25,6 +23,9 @@ class Lomake extends React.Component {
       
     }
 
+    // Kontrolloidun lomakkeen muutosfunktio, jota kutsutaan kun kenttään tapahtuu muutos. funktio selvittää mihin kenttään
+    // muutos tapahtui, selvittää sen arvon ja nimen ja päivittää State-muuttujan sillä nimellä, joka sille on määritelty//
+
     handleInputChange(event) {
       const target = event.target;
       const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -38,23 +39,25 @@ class Lomake extends React.Component {
       });
     }
 
+
+   //Peruutusfunktio eli kun painaa peruuta-nappia, palauttaa käyttäjän takaisin edelliselle sivulle
+
     handleCancel(event) {
       event.preventDefault();
       this.props.history.goBack();
     }
 
+    //Lomakkeenkäsittelyfunktio.
+
     handleSubmit(event) {
-      event.preventDefault();
-      let data = Object.assign({}, this.state.data);
-      data.grammat = parseFloat(data.grammat);
+      event.preventDefault();//Estetään oletustapahtuma, ei lataa sivua uudelleen
+      let data = Object.assign({}, this.state.data); //data muutetaan "hyväksyttävään" muotoon
+      data.grammat = parseFloat(data.grammat);//käsitellään datamuuttujassa halutut arvot desimaalimuotoon
       data.eurot = parseFloat(data.eurot);
-      data.id = uuidv4();
+      data.id = uuidv4(); //luo uudelle tietueelle id-numeron
       this.props.onFormSubmit(data);
-      this.props.history.push("/kasvikset");
+      this.props.history.push("/"); //palauttaa käyttäjän "lisää-napin" painalluksen jälkeen sovelluken etusivulle
     }
-
-
-
 
 
   render() {
@@ -88,17 +91,17 @@ class Lomake extends React.Component {
             <div>
               <label htmlFor="name">Eurot</label>
               <input type="number" name="eurot" step="0.1" value={this.state.data.eurot} onChange={this.handleInputChange}/>
-           </div>
+            </div>
           </div>
 
           <div className="itemform__row">
             <div>
-          <Button onClick={this.handleCancel}>PERUUTA</Button>
-          </div>
-          <div>
-            <Button type="submit" primary>LISÄÄ</Button>
-          </div>
-          </div>
+              <Button onClick={this.handleCancel}>PERUUTA</Button>
+            </div>
+            <div>
+              <Button type="submit" primary>LISÄÄ</Button>
+            </div>
+            </div>
 
         </div>
         </form>
