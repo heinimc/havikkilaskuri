@@ -39,15 +39,29 @@ let doughnutData = {
 ]
 }
 
-//tehdään viivakaavio, joka piirtää hävikin määrän päivien ja grammojen mukaan
+//tehdään viivakaavio, joka piirtää hävikin määrän päivien ja grammojen mukaan, mukaan reduceri, joka laskee kaikki saman päivän
+//lisäykset yhdeksi merkinnäksi aikajanalle.
 
-  let linedata= props.data.map(item => ({x: item.päivä, y: item.grammat}) );
+
+const reducer1 = (grammatTotal, currentItem) => {
+  const index = grammatTotal.findIndex(item => item.päivä === moment(currentItem.päivä).format('YYYY-M'));
+
+    if (index >=0) {
+      grammatTotal[index].grammat = grammatTotal[index].grammat + currentItem.grammat;
+    } else {
+      grammatTotal.push({päivä: moment(currentItem.päivä).format('YYYY-M'), grammat:currentItem.grammat});
+    }
+    return grammatTotal;
+  }
+
+
+ let grammatTotal = props.data.reduce(reducer1, []);
 
     let data = {
       datasets: [
         {
           label: "hävikit",
-          data: linedata,
+          data: grammatTotal.map(item => ({x: item.päivä, y: item.grammat}) ),
           fill: false,
           backgroundColor: 'rgba(0,0,0,0.2)',
           borderColor: 'rgba (0,0,0,0.2)'
