@@ -15,7 +15,6 @@ import Chart from './components/Chart/Chart';
 import Menu from './components/Menu/Menu';
 import Content from './components/Content/Content';
 import Button from './components/buttons';
-import iconvegetables from './icon-vegetables.png';
 
 
 class App extends Component {

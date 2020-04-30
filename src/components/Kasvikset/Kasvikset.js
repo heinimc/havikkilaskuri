@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import Content from '../Content/Content';
 import { Link } from 'react-router-dom';
-import iconvegetables from '../images/icon -vegetables.png';
+import iconvegetables from '../images/icon-vegetables.png';
 
 import './Kasvikset.css';
 
