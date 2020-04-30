@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App-komponentti renderöityy oikein 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="header"
+  >
+    <div>
+      <h1>
+        Hävikkilaskuri
+      </h1>
+    </div>
+    <div>
+      <button
+        className="button   "
+        type="button"
+      >
+        logout
+      </button>
+    </div>
+  </div>
+  <div
+    className="content"
+  >
+    <div
+      className="App_welcome"
+    >
+      <div>
+        Et ole vielä kirjautunut sisään! 
+      </div>
+      <div>
+        <button
+          className="button  button--primary "
+          onClick={[Function]}
+          type="button"
+        >
+          Kirjaudu sisään
+        </button>
+      </div>
+      <div />
+    </div>
+  </div>
+  <div
+    className="menu"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <div
+        className="menu__nappi"
+      >
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root"
+          color="#fff"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M4 14h4v-4H4v4zm0 5h4v-4H4v4zM4 9h4V5H4v4zm5 5h12v-4H9v4zm0 5h12v-4H9v4zM9 5v4h12V5H9z"
+          />
+        </svg>
+      </div>
+    </a>
+    <a
+      href="/history"
+      onClick={[Function]}
+    >
+      <div
+        className="menu__nappi"
+      >
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root"
+          color="#fff"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"
+          />
+        </svg>
+      </div>
+    </a>
+    <a
+      href="/chart"
+      onClick={[Function]}
+    >
+      <div
+        className="menu__nappi"
+      >
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root"
+          color="#fff"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M11 2v20c-5.07-.5-9-4.79-9-10s3.93-9.5 9-10zm2.03 0v8.99H22c-.47-4.74-4.24-8.52-8.97-8.99zm0 11.01V22c4.74-.47 8.5-4.25 8.97-8.99h-8.97z"
+          />
+        </svg>
+      </div>
+    </a>
+  </div>
+</div>
+`;

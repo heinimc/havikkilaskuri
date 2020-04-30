@@ -60,7 +60,7 @@ const reducer1 = (grammatTotal, currentItem) => {
     let data = {
       datasets: [
         {
-          label: "hävikit",
+          label: "hävikki",
           data: grammatTotal.map(item => ({x: item.päivä, y: item.grammat}) ),
           fill: false,
           backgroundColor: 'rgba(0,0,0,0.2)',
@@ -80,7 +80,8 @@ const reducer1 = (grammatTotal, currentItem) => {
               displayFormats: {
                 day: 'D.M.Y',
                 month: 'M.Y'
-              }
+              },
+              minUnit: 'month'
             }
           }
         ]
@@ -94,7 +95,7 @@ const reducer1 = (grammatTotal, currentItem) => {
           <div className="chart__doughnutgraph">
             <Doughnut data={doughnutData} />
           </div>
-          <h3>Päiväkohtaiset hävikit (g)</h3>
+          <h3>Kuukausikohtaiset hävikit (g)</h3>
           <div className="chart__linegraph">
             <Line data={data} options={options} />
           </div>

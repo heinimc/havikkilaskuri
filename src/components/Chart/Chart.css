@@ -9,6 +9,7 @@
 .chart__doughnutgraph {
     position: relative;
     height: 20em;
+    margin-bottom: -3.5em;
     
 }
 
