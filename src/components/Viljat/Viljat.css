@@ -3,11 +3,16 @@
   border-bottom: 1px solid black;
   font-weight: bold;
   font-size: 120%;
+  display: grid;
+    grid-template-columns: 2fr 1fr;
 }
 
+.wheat__image img {
+  width: 100px;
+  height: 100px;
+}
 
 .wheat__row {
-  
   justify-content: space-between;
   font-size: 85%;
   font-weight: lighter;

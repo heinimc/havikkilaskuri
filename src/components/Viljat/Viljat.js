@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import Content from '../Content/Content';
 import { Link } from 'react-router-dom';
+import iconpiece from '../images/icon-piece.png';
 
 import './Viljat.css';
 
@@ -16,19 +17,16 @@ function Viljat (props) {
 
       return(
       <Content>
-          <div className="wheat"><h3>Viljat</h3>
-            <div className="wheat__row">
-              <div className="wheat__kuukausi">{kuukausi.format("MMMM YYYY")}</div>
-            </div>
-    
-            <div className="wheat__row">
-              <div className="wheat__grammat">{grammat ? grammat + " g" : " g"} </div>
-              <div className="wheat__eurot">{eurot.toFixed(2) ? eurot.toFixed(2) + " €" : " €"} </div>
-            </div>
-            <div className="wheat__row">
-              <Link to="/viljat">Edelliset hävikit</Link>
-            </div>
-          </div>
+      <div className="wheat">
+        <div className="wheat__image">
+        <Link to="/viljat"><div><img src = {iconpiece}alt="viljat"/></div></Link>
+        </div>
+        <div className="wheat__row">
+          <div className="wheat__kuukausi">{kuukausi.format("MMMM YYYY")}</div>
+          <div className="wheat__grammat">{grammat ? grammat + " g" : " g"} </div>
+          <div className="wheat__eurot">{eurot.toFixed(2) ? eurot.toFixed(2) + " €" : " €"} </div>
+        </div>
+      </div>
       </Content>
       
     );

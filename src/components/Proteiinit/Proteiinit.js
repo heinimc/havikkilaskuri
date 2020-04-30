@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import Content from '../Content/Content';
 import { Link } from 'react-router-dom';
+import iconproteins from '../images/icon-proteins.png';
 import './Proteiinit.css';
 
 
@@ -18,17 +19,14 @@ function Proteiinit (props) {
 
     return(
       <Content>
-      <div className="protskut"><h3>Proteiinit</h3>
+      <div className="protskut">
+        <div className="protskut__image">
+        <Link to="/proteiinit"><div><img src = {iconproteins}alt="proteiinit"/></div></Link>
+        </div>
         <div className="protskut__row">
           <div className="protskut__kuukausi">{kuukausi.format("MMMM YYYY")}</div>
-        </div>
-  
-        <div className="protskut__row">
           <div className="protskut__grammat">{grammat ? grammat + " g" : " g"} </div>
-          <div className="protskut__eurot">{eurot.toFixed(2) ? eurot.toFixed(2) + " €" : " €"} </div>
-        </div>
-        <div className="protskut__row">
-          <Link to="/proteiinit">Edelliset hävikit</Link>
+          <div className="protskut__eurot">{eurot.toFixed(2) ? eurot.toFixed(2) + " €" : " €"} </div>        
         </div>
       </div>
       

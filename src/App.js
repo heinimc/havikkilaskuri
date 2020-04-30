@@ -15,6 +15,7 @@ import Chart from './components/Chart/Chart';
 import Menu from './components/Menu/Menu';
 import Content from './components/Content/Content';
 import Button from './components/buttons';
+import iconvegetables from './icon-vegetables.png';
 
 
 class App extends Component {
@@ -123,38 +124,27 @@ logout() {
     <Router>
       <div className="App">
 
-      <Header onLogout={this.logout} />
+        <Header onLogout={this.logout} />
       
          <Route path="/" exact render={() => <Raakaaineet data = {this.state.data} />}/>
-
          <Route path="/kasvikset" render={() => <Kasviksethistoria data={this.state.data} 
                                                                      onDeleteItem={this.handleDeleteItem}/>}/>
-                                                                    
-           <Route path="/proteiinit" render ={() => <Proteiinithistoria data={this.state.data}
+         <Route path="/proteiinit" render ={() => <Proteiinithistoria data={this.state.data}
                                                                         onDeleteItem={this.handleDeleteItem}/>}/>
-           <Route path="/maitotuotteet" render={ () => <Maitotuotteethistoria data={this.state.data}
+         <Route path="/maitotuotteet" render={ () => <Maitotuotteethistoria data={this.state.data}
                                                                               onDeleteItem={this.handleDeleteItem}/>}/>
-
-           <Route path="/viljat" render ={() => <Viljathistoria data={this.state.data}
+         <Route path="/viljat" render ={() => <Viljathistoria data={this.state.data}
                                                                 onDeleteItem={this.handleDeleteItem}/>}/>
-
-          
-              <Route path="/history" render ={() => <History data={this.state.data}/>}/>
-              <Route path="/chart" render={() => <Chart data = {this.state.data}/>}/>
-                <Route path="/lisää" render= {() => <Lisää onFormSubmit={this.handleFormSubmit}/>} />
+         <Route path="/history" render ={() => <History data={this.state.data}/>}/>
+         <Route path="/chart" render={() => <Chart data = {this.state.data}/>}/>
+         <Route path="/lisää" render= {() => <Lisää onFormSubmit={this.handleFormSubmit}/>} />
               
-      <Menu />
+        <Menu />
       </div>
     </Router>
-
-
-
-  
 
   );
 }
 }
-
-
 
 export default App;

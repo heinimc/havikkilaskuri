@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import Content from '../Content/Content';
 import { Link } from 'react-router-dom';
+import iconmilk from '../images/icon-milk.png';
 
 
 import './Maitotuotteet.css';
@@ -19,17 +20,16 @@ function Maitotuotteet (props) {
   
     return(
       <Content>
-      <div className="maidot"><h3>Maitotuotteet</h3>
+      <div className="maidot">
+        <div className="maidot__image">
+        <Link to="/maitotuotteet"><div><img src = {iconmilk}alt="maidot"/></div></Link>
+        </div>
         <div className="maidot__row">
           <div className="maidot__kuukausi">{kuukausi.format("MMMM YYYY")}</div>
-        </div>
-  
-        <div className="maidot__row">
           <div className="maidot__grammat">{grammat ? grammat + " g" : " g"} </div>
           <div className="maidot__eurot">{eurot.toFixed(2) ? eurot.toFixed(2) + " €" : " €"} </div>
         
-        <div className="maidot__row"></div>
-          <Link to="/maitotuotteet">Edelliset hävikit</Link>
+          
         </div>
       </div>
 
