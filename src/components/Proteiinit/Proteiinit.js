@@ -8,7 +8,7 @@ import './Proteiinit.css';
 
 function Proteiinit (props) {
 
-  let kuukausi = moment(props.kuukausi);
+  let vuosi = moment(props.vuosi);
 
    //filtteröidään datasta ne hävikin lisäykset jotka koskevat proteiineja ja lasketaan niiden kokonaismäärä euroissa ja grammoissa yhteen
 
@@ -16,7 +16,10 @@ function Proteiinit (props) {
   const eurot = props.data.filter(item => item.raakaaine === "proteiinit").reduce((total, item) => total + item.eurot, 0);
 
   
-
+ //koodista puuttuu osa,jossa on otettu jokaisen raaka-aineen lisäykset vuosittain ja ne määrät näkyvät etusivulla. Nyt sivulla on vuosi 2020//
+  //mutta se tulee sisältämään myös lisäykset ensi vuodelle. Tosiasiassa etusivulla on siis hävikin kokonaismäärä sovelluksen käyttöönotosta
+  //alkaen
+  
     return(
       <Content>
       <div className="protskut">
@@ -24,7 +27,7 @@ function Proteiinit (props) {
         <Link to="/proteiinit"><div><img src = {iconproteins}alt="proteiinit"/></div></Link>
         </div>
         <div className="protskut__row">
-          <div className="protskut__kuukausi">{kuukausi.format("MMMM YYYY")}</div>
+        <div className="protskut__kuukausi">Vuosi {vuosi.format("YYYY")}</div>
           <div className="protskut__grammat">{grammat ? grammat + " g" : " g"} </div>
           <div className="protskut__eurot">{eurot.toFixed(2) ? eurot.toFixed(2) + " €" : " €"} </div>        
         </div>
